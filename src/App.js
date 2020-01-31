@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import Speech from 'speak-tts'
 // import logo from './logo.svg';
 import "./App.css";
 import Particles from "react-particles-js";
 import { Upload, Icon, message } from "antd";
 
+const speech = new Speech()
 const { Dragger } = Upload;
 const props = {
   name: "file",
@@ -16,12 +18,33 @@ const props = {
     }
     if (status === "done") {
       message.success(`${info.file.name} file uploaded successfully.`);
+      const url = 'http://audiot.herokuapp.com/api/translate/'+info.file.name
+      const formData = new FormData();
+      formData.append('file', info.file);
+      fetch(url, {
+        method: 'POST',
+        body: formData
+      })
+      .then(data => console.log("ddddd",data))
+      .catch(err => console.log("errrr",err));
+      console.log("fgfgdfgdfgdfg",info.file)
+      
     } else if (status === "error") {
       message.error(`${info.file.name} file upload failed.`);
     }
   }
 };
 class App extends Component {
+  SpanishTrans(){
+    console.log("sdfsdf")
+    speech.speak({
+      text: 'Hello, how are you today ?',
+  }).then(() => {
+      console.log("Success !")
+  }).catch(e => {
+      console.error("An error occurred :", e)
+  })
+  }
   render() {
     return (
       <div className="App">
@@ -86,6 +109,7 @@ class App extends Component {
               class="clickableimage"
               src="https://s3.amazonaws.com/tomash-us-east-1/voice-translator/graphics/flags/es.png"
               height="100"
+              onClick={this.SpanishTrans.bind(this)}
             />
             <br />
             Spanish
