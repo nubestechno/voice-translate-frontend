@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.dragContainer {
+  padding-top: 50px;
+}
+.App canvas {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.ant-upload.ant-upload-drag {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.mT30 {
+  margin-top: 30px;
+}
+.flags {
+  color: white;
+  text-align: center;
+}
