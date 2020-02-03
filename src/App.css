@@ -57,3 +57,19 @@
   color: white;
   text-align: center;
 }
+
+.clickableimage {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.dzu-dropzone {
+  overflow: hidden;
+  border: 1px dotted #fff;
+}
+.dzu-previewContainer {
+  border-bottom: 0;
+}
+.dzu-previewFileName {
+  color: #fff;
+}
