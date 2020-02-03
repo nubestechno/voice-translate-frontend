@@ -177,7 +177,7 @@ class App extends Component {
               onClick={this.HindiTrans.bind(this)}
             />
             <br />
-            German
+            Hindi
             <br />
             &nbsp;
           </div>
@@ -227,7 +227,7 @@ class App extends Component {
               onClick={this.ArabicTrans.bind(this)}
             />
             <br />
-            Swedish
+            Arabic
             <br />
             &nbsp;
           </div>
