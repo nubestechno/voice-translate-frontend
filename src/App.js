@@ -95,6 +95,7 @@ class App extends Component {
       });
   }
   getUploadParams = ({ meta }) => {
+    this.state.loader = true;
     const url = "https://httpbin.org/post";
     return {
       url: url,
@@ -106,7 +107,7 @@ class App extends Component {
   // called every time a file's `status` changes
   handleChangeStatus = ({ meta, file }, status) => {
     // this.setState({loader:true})
-    this.state.loader = true;
+
     if (status == "done") {
       const url =
         "http://audiot.herokuapp.com/api/translate/AUD-20200201-WA0002";
@@ -137,6 +138,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="loaderWrapper">
+          <Loader
+            visible={this.state.loader}
+            type="Audio"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            className="loader"
+          />
+        </div>
         <Particles
           params={{
             particles: {
@@ -158,13 +169,6 @@ class App extends Component {
           }}
         />
         <div className="container ">
-          <Loader
-            visible={this.state.loader}
-            type="Audio"
-            color="#00BFFF"
-            height={100}
-            width={100}
-          />
           <div className="col-md-12 dragContainer">
             <h1 className="text-center text-white">Audio Translator</h1>
             {/* <Dragger {...props}>

@@ -62,6 +62,12 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+.clickableimage:hover,
+.clickableimage:focus {
+  border: 2px solid #61dafb;
 }
 .dzu-dropzone {
   overflow: hidden;
@@ -72,4 +78,10 @@
 }
 .dzu-previewFileName {
   color: #fff;
+}
+.loaderWrapper .loader {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20%;
 }
