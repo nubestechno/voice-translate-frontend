@@ -110,7 +110,7 @@ class App extends Component {
 
     if (status == "done") {
       const url =
-        "http://audiot.herokuapp.com/api/translate/AUD-20200201-WA0002";
+        "http://cf088d8c.ngrok.io/api/translate/AUD-20200201-WA0002";
       console.log("fgfghfssssssss", file);
       axios
         .post(url, file, {
